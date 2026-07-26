@@ -114,7 +114,7 @@ function flocking_model(
     )
     space2d = ContinuousSpace(extent; spacing)
     model = ModelType(
-        Bird, space2d, (agent_step!) = flocking_model_agent_step!,
+        Bird, space2d, agent_step! = flocking_model_agent_step!,
         scheduler = Schedulers.Randomly(), rng = StableRNG(10),
         container = ContainerType
     )
