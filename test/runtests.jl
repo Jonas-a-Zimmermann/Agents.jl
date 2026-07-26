@@ -75,7 +75,7 @@ function schelling_model(ModelType, SpaceType, ContainerType; numagents = 30, gr
     space = SpaceType(griddims, periodic = false)
     properties = Dict(:min_to_be_happy => min_to_be_happy)
     model = ModelType(
-        SchellingAgent2, space, (agent_step!) = schelling_model_agent_step!,
+        SchellingAgent2, space, agent_step! = schelling_model_agent_step!,
         properties = properties, scheduler = Schedulers.Randomly(),
         container = ContainerType, rng = StableRNG(10)
     )
